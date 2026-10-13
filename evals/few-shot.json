@@ -1,0 +1,23 @@
+{
+  "status": "prompt-demonstrations-not-held-out-evaluation",
+  "cases": [
+    {
+      "id": "forward-with-label",
+      "request": "Read an item and return its fetched Value together with my label.",
+      "answer": "examples/forward-with-label.vyg",
+      "review": ["Bind the upstream Value explicitly", "Pass both Value and label", "Fetch emits exactly one Value"]
+    },
+    {
+      "id": "classify-then-act",
+      "request": "Classify incident logs, retry flaky tests or patch real defects, and preserve classification evidence in the chosen action inputs.",
+      "answer": "examples/classify-then-act.vyg",
+      "review": ["Classification returns a Value before selection", "Selector is effect-free", "Actions receive the evidence", "An existing branch is not replanning"]
+    },
+    {
+      "id": "guarded-countdown",
+      "request": "Decrement a nonnegative integer until zero, then return it.",
+      "answer": "examples/guarded-countdown.vyg",
+      "review": ["The recursive definition has a selected exit", "Each recursive call is a fresh occurrence"]
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+(* Subsea Cable syntax projection. See LANGUAGE_REFERENCE.md for authoring.
+   Required preprocessing: conformance/README.md.
+   Grammar recognition alone does not establish Runtime compatibility. *)
+
+Program              = [ Terminator ], StatementList ;
+StatementList        = Statement, { Terminator, Statement }, [ Terminator ] ;
+
+Statement            = RootDeclaration | Binding | Expression ;
+
+RootDeclaration      = "root", GoalName, "/", IntPart ;
+
+Binding              = Identifier, "=", ( FunctionLeafImplementation
+                                        | DeclaredGoalArrow
+                                        | Expression ) ;
+
+FunctionLeafImplementation = FnParams, "->", FnBody ;
+
+DeclaredGoalArrow    = GoalParams, MultiplicityArrow, GoalBody ;
+
+MultiplicityArrow    = "-0>" | "-1>" | "-N>" ;
+
+Expression           = GoalArrow | LogicalOr ;
+
+GoalArrow            = GoalParams, "->", GoalBody ;
+
+GoalBody             = { PolicyPrefix }, GoalBodyCore ;
+
+GoalBodyCore         = GoalReference
+                     | HostAnchor
+                     | GoalArrow
+                     | SerialPipeline
+                     | ParallelComposition
+                     | ResolvingMap ;
+
+GoalReference        = GoalName, ( BracketSuffix | CallSuffix ) ;
+
+GoalName             = Identifier, [ HashQualifier ] ;
+
+PolicyPrefix         = "@", Identifier, [ CallSuffix ] ;
+
+HostAnchor           = "$", Identifier, [ CallSuffix ] ;
+
+GoalParams           = "[", [ ParamList | ScopeDestructure ], "]" ;
+FnParams             = "(", [ ParamList | ScopeDestructure ], ")" ;
+
+FnBody               = Expression | FunctionComposite ;
+FunctionComposite    = "{", Expression, ";", Expression,
+                       { ";", Expression }, [ ";" ], "}" ;
+
+ParamList            = Param, { ",", Param }, [ "," ] ;
+Param                = Identifier ;
+
+ScopeDestructure     = "{", [ DestructureFieldList ], "}" ;
+DestructureFieldList = Identifier, { ",", Identifier }, [ "," ] ;
+
+LogicalOr            = LogicalAnd, { "||", LogicalAnd } ;
+LogicalAnd           = Equality, { "&&", Equality } ;
+Equality             = Comparison, [ ( "==" | "!=" ), Comparison ] ;
+Comparison           = Additive, [ ( "<=" | ">=" | "<" | ">" ), Additive ] ;
+Additive             = Multiplicative, { ( "+" | "-" ), Multiplicative } ;
+Multiplicative       = Unary, { ( "*" | "/" | "%" ), Unary } ;
+
+Unary                = "!", Unary | "-", Unary | PolicyValue | Postfix ;
+
+PolicyValue          = PolicyPrefix, { PolicyPrefix },
+                       ( GoalName, ( BracketSuffix | CallSuffix )
+                       | HostAnchor ) ;
+Postfix              = GoalName, [ BracketSuffix | CallSuffix ]
+                     | HostAnchor
+                     | NonIdentifierPrimary ;
+
+BracketSuffix        = "[", [ ArgList ], "]" ;
+CallSuffix           = "(", [ ArgList ], ")" ;
+ArgList              = Expression, { ",", Expression }, [ "," ] ;
+
+NonIdentifierPrimary = SerialPipeline
+                     | ParallelComposition
+                     | Map
+                     | Group
+                     | Number
+                     | Boolean
+                     | StringLiteral ;
+
+SerialPipeline       = "[", ( PipelineStageList | ConditionalStage ), "]" ;
+PipelineStageList    = GoalStage, ",", GoalStage,
+                       { ",", GoalStage }, [ "," ] ;
+
+ConditionalStage     = LogicalOr, ",", ConditionalBranchMap, [ "," ] ;
+ConditionalBranchMap = "{", ConditionalBranchEntry,
+                       { ",", ConditionalBranchEntry }, [ "," ], "}" ;
+ConditionalBranchEntry = MapKey, ":", GoalStage ;
+
+GoalStage            = { PolicyPrefix }, GoalStageCore ;
+GoalStageCore        = GoalName, [ BracketSuffix | CallSuffix ]
+                     | HostAnchor
+                     | GoalArrow
+                     | SerialPipeline
+                     | ParallelComposition ;
+
+ParallelComposition  = "{", GoalStage, ",", GoalStage,
+                       { ",", GoalStage }, [ "," ], "}" ;
+
+ResolvingMap         = "{", ResolvingMapEntry,
+                       { ",", ResolvingMapEntry }, [ "," ], "}" ;
+ResolvingMapEntry    = MapKey, ":", GoalStage ;
+
+Map                  = "{", [ MapEntryList ], "}" ;
+MapEntryList         = MapEntry, { ",", MapEntry }, [ "," ] ;
+MapEntry             = MapKey, ":", Expression ;
+MapKey               = [ "-" ], Number | Boolean | Wildcard | StringLiteral | Identifier ;
+
+Group                = "(", Expression, ")" ;
+
+Wildcard             = "_" ;
+
+HashQualifier        = "#", AlphaNumeric, { AlphaNumeric } ;
+AlphaNumeric         = AlphaStart | Digit ;
+
+Boolean              = "true" | "false" ;
+
+Identifier           = AlphaStart, { IdentRest } | "_", IdentRest, { IdentRest } ;
+
+AlphaStart           = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m"
+
+                     | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z"
+                     | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M"
+                     | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+
+IdentStart           = AlphaStart | "_" ;
+IdentRest            = IdentStart | Digit ;
+
+Number               = IntPart, [ FracPart ] ;
+IntPart              = "0" | NonZeroDigit, { Digit } ;
+FracPart             = ".", Digit, { Digit } ;
+
+Digit                = "0" | NonZeroDigit ;
+NonZeroDigit         = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+
+StringLiteral        = '"', { StringChar }, '"' ;
+
+StringChar           = ? any printable character except double quote, backslash,
+                         carriage return, or line feed ? | EscapeSeq ;
+EscapeSeq            = '\"' | '\\' | '\n' | '\r' | '\t' | UnicodeEscape ;
+UnicodeEscape        = '\u{', HexDigit, [ HexDigit, [ HexDigit, [ HexDigit,
+                         [ HexDigit, [ HexDigit ] ] ] ] ], '}' ;
+
+HexDigit             = Digit | "a" | "b" | "c" | "d" | "e" | "f"
+                             | "A" | "B" | "C" | "D" | "E" | "F" ;
+
+Terminator           = ( "\n" | "\r\n" ), { "\n" | "\r\n" } ;

@@ -1,0 +1,473 @@
+{
+  "name": "subsea-cable-lang-pack",
+  "version": "0.1.0",
+  "status": "informative-authoring-pack",
+  "language_revision": "83a897276b0d50a240530b363101dc64cdc42c30",
+  "license": "Apache-2.0",
+  "compact_byte_budget": 18000,
+  "compact_modules": [
+    "knowledge/model.md",
+    "knowledge/pitfalls.md",
+    "knowledge/workflow.md"
+  ],
+  "payload": [
+    "SKILL.md",
+    "knowledge/model.md",
+    "knowledge/syntax.md",
+    "knowledge/patterns.md",
+    "knowledge/pitfalls.md",
+    "knowledge/workflow.md",
+    "adapters/README.md",
+    "adapters/AGENTS.snippet.md",
+    "examples/review-request.vyg",
+    "examples/guarded-countdown.vyg",
+    "knowledge/few-shot.md",
+    "examples/forward-with-label.vyg",
+    "examples/classify-then-act.vyg",
+    "evals/few-shot.json"
+  ],
+  "module_sources": {
+    "SKILL.md": [
+      "LANGUAGE_REFERENCE.md",
+      "GOVERNANCE.md",
+      "RUNTIME_STATUS.md"
+    ],
+    "knowledge/model.md": [
+      "FOR_AGENTS.md",
+      "METAPHORS.md",
+      "LANGUAGE_REFERENCE.md",
+      "ADOPTION.md",
+      "GOVERNANCE.md"
+    ],
+    "knowledge/syntax.md": [
+      "LANGUAGE_REFERENCE.md",
+      "SubseaCable.g4",
+      "SubseaCable.ebnf",
+      "conformance/README.md",
+      "BRAND.md",
+      "Recursion.md"
+    ],
+    "knowledge/patterns.md": [
+      "LANGUAGE_REFERENCE.md",
+      "FOR_AGENTS.md",
+      "ADOPTION.md",
+      "Recursion.md"
+    ],
+    "knowledge/pitfalls.md": [
+      "LANGUAGE_REFERENCE.md",
+      "FOR_AGENTS.md",
+      "ADOPTION.md",
+      "RUNTIME_STATUS.md"
+    ],
+    "knowledge/workflow.md": [
+      "FOR_AGENTS.md",
+      "ADOPTION.md",
+      "GOVERNANCE.md",
+      "RUNTIME_STATUS.md",
+      "GET_STARTED.md"
+    ],
+    "adapters/README.md": [
+      "GET_STARTED.md",
+      "RUNTIME_STATUS.md"
+    ],
+    "adapters/AGENTS.snippet.md": [
+      "FOR_AGENTS.md",
+      "RUNTIME_STATUS.md"
+    ],
+    "examples/review-request.vyg": [
+      "FOR_AGENTS.md",
+      "LANGUAGE_REFERENCE.md"
+    ],
+    "examples/guarded-countdown.vyg": [
+      "Recursion.md",
+      "LANGUAGE_REFERENCE.md"
+    ],
+    "knowledge/few-shot.md": [
+      "LANGUAGE_REFERENCE.md",
+      "FOR_AGENTS.md",
+      "Recursion.md"
+    ],
+    "examples/forward-with-label.vyg": [
+      "LANGUAGE_REFERENCE.md",
+      "FOR_AGENTS.md"
+    ],
+    "examples/classify-then-act.vyg": [
+      "LANGUAGE_REFERENCE.md",
+      "FOR_AGENTS.md"
+    ],
+    "evals/few-shot.json": [
+      "LANGUAGE_REFERENCE.md",
+      "FOR_AGENTS.md",
+      "Recursion.md"
+    ]
+  },
+  "sources": {
+    "LANGUAGE_REFERENCE.md": {
+      "path": "upstream/export/LANGUAGE_REFERENCE.md",
+      "sha256": "68cc46d820af9e2547d3f1c735561d3979b317c691bd41e878bcafc0405b3f0b",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/LANGUAGE_REFERENCE/",
+      "language_path": "export/LANGUAGE_REFERENCE.md"
+    },
+    "FOR_AGENTS.md": {
+      "path": "upstream/export/FOR_AGENTS.md",
+      "sha256": "237f7dc3721c667cd7967c5bdc23ab0b8961aea584e7db92ba37b6a84aec3990",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/FOR_AGENTS/",
+      "language_path": "export/FOR_AGENTS.md"
+    },
+    "ADOPTION.md": {
+      "path": "upstream/export/ADOPTION.md",
+      "sha256": "27a37b399710cfd0aab154136cf4edccea7e39485fd53530aff4a4e72c62632d",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/ADOPTION/",
+      "language_path": "export/ADOPTION.md"
+    },
+    "Recursion.md": {
+      "path": "upstream/export/Recursion.md",
+      "sha256": "3af871351003127fa3f6c736c56bedccc319d81f1bc677298b126a5fb468ca37",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/Recursion/",
+      "language_path": "export/Recursion.md"
+    },
+    "GOVERNANCE.md": {
+      "path": "upstream/export/GOVERNANCE.md",
+      "sha256": "3acf8ec95ad68b096e28a4290e07a56fb73faf137641f6fb6f51a8e2e50d126b",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/GOVERNANCE/",
+      "language_path": "export/GOVERNANCE.md"
+    },
+    "RUNTIME_STATUS.md": {
+      "path": "upstream/export/RUNTIME_STATUS.md",
+      "sha256": "efe76d76f015e2a555e28e3abd74e57f19e90a0bd099f31c39e84b436de33d0e",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/RUNTIME_STATUS/",
+      "language_path": "export/RUNTIME_STATUS.md"
+    },
+    "GET_STARTED.md": {
+      "path": "upstream/export/GET_STARTED.md",
+      "sha256": "193878b8e333bc57002f3e5c35c6cd621d3876f5530820c9f8184754ee48f472",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/GET_STARTED/",
+      "language_path": "export/GET_STARTED.md"
+    },
+    "BRAND.md": {
+      "path": "upstream/export/BRAND.md",
+      "sha256": "7fd0d1528cbe502d7411ea623b5a0f8449bb7fb5b661145607686d16e267b64d",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/BRAND/",
+      "language_path": "export/BRAND.md"
+    },
+    "METAPHORS.md": {
+      "path": "upstream/export/METAPHORS.md",
+      "sha256": "1dc7b8c731a43d96fae4565a0e978ba8dc29dfe0a2011a188a224e64757f71cd",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/METAPHORS/",
+      "language_path": "export/METAPHORS.md"
+    },
+    "conformance/README.md": {
+      "path": "upstream/export/conformance/README.md",
+      "sha256": "a83ae6a7fe6910c2e2b0b66055898a266d6ecdae15a08cc5dbbea7067005b9f5",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/",
+      "language_path": "export/conformance/README.md"
+    },
+    "SubseaCable.g4": {
+      "path": "upstream/export/SubseaCable.g4",
+      "sha256": "6f6501afdb56c384f29d0a7a43271f821a38143661abbc6262dc6611f3e43b04",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/SubseaCable.g4",
+      "language_path": "export/SubseaCable.g4"
+    },
+    "SubseaCable.ebnf": {
+      "path": "upstream/export/SubseaCable.ebnf",
+      "sha256": "60cfaa21279093ce88d0d512b7f74c894d314a97b41041e7bf775fe6947e70ed",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/SubseaCable.ebnf",
+      "language_path": "export/SubseaCable.ebnf"
+    },
+    "conformance/cases.tsv": {
+      "path": "upstream/export/conformance/cases.tsv",
+      "language_path": "export/conformance/cases.tsv",
+      "sha256": "1a3c8354df86e7f66aaf1e159c1ac11f7a0b55cd5e70f41699f4c9735f35b5ed",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/cases.tsv"
+    },
+    "conformance/invalid-semantic/ArityMismatch.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/ArityMismatch.vyg",
+      "language_path": "export/conformance/invalid-semantic/ArityMismatch.vyg",
+      "sha256": "7022e48233d31d4de82da0e7990a71db039ecea8cba061dc0f84bd1cd6c10613",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/ArityMismatch.vyg"
+    },
+    "conformance/invalid-semantic/ConditionalCycleWithoutExit.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/ConditionalCycleWithoutExit.vyg",
+      "language_path": "export/conformance/invalid-semantic/ConditionalCycleWithoutExit.vyg",
+      "sha256": "645ed37b1af7659e03ba84bc94656de46853839a272def94e47b9aed64348aba",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/ConditionalCycleWithoutExit.vyg"
+    },
+    "conformance/invalid-semantic/ConditionalExitReentersCycle.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/ConditionalExitReentersCycle.vyg",
+      "language_path": "export/conformance/invalid-semantic/ConditionalExitReentersCycle.vyg",
+      "sha256": "55cf4f11c36193b455ccaed26b9a3e4f1e6afe0e65a21d32e0b4c25b6dacc5d7",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/ConditionalExitReentersCycle.vyg"
+    },
+    "conformance/invalid-semantic/ConditionalKeyNotFound.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/ConditionalKeyNotFound.vyg",
+      "language_path": "export/conformance/invalid-semantic/ConditionalKeyNotFound.vyg",
+      "sha256": "cc4e20e5dfbed8c8c0e938494674f710b292cf36b5c630c95aad8b6ea61e1d24",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/ConditionalKeyNotFound.vyg"
+    },
+    "conformance/invalid-semantic/ConditionalUppercaseSelector.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/ConditionalUppercaseSelector.vyg",
+      "language_path": "export/conformance/invalid-semantic/ConditionalUppercaseSelector.vyg",
+      "sha256": "cefd6dca96129cc60840e642821afcd8571a3e0a853f5805d4822f69dd3fdca4",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/ConditionalUppercaseSelector.vyg"
+    },
+    "conformance/invalid-semantic/CycleDetected.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/CycleDetected.vyg",
+      "language_path": "export/conformance/invalid-semantic/CycleDetected.vyg",
+      "sha256": "a8f83e4abf64db882969f76bbc5f766b891fc882746e3db11cf9f750d8ce6d36",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/CycleDetected.vyg"
+    },
+    "conformance/invalid-semantic/DestructureMismatch.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/DestructureMismatch.vyg",
+      "language_path": "export/conformance/invalid-semantic/DestructureMismatch.vyg",
+      "sha256": "1242a7731fe4cd0b5c25fbbbbe1280f42343ff7818dbef11665660dc306ae9f2",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/DestructureMismatch.vyg"
+    },
+    "conformance/invalid-semantic/DestructureMismatchEagerCall.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/DestructureMismatchEagerCall.vyg",
+      "language_path": "export/conformance/invalid-semantic/DestructureMismatchEagerCall.vyg",
+      "sha256": "28bf1d0bb4afcf08f0f57ccf479789d06def0fab4fab7cbbf0a04ce95d14e1ee",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/DestructureMismatchEagerCall.vyg"
+    },
+    "conformance/invalid-semantic/DuplicateMapKey.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/DuplicateMapKey.vyg",
+      "language_path": "export/conformance/invalid-semantic/DuplicateMapKey.vyg",
+      "sha256": "f9b50bb6a0365d6f0987e09ae7e3eca168b671616e531cc450dc7caa449ec61e",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/DuplicateMapKey.vyg"
+    },
+    "conformance/invalid-semantic/EffectfulConditionalSelector.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/EffectfulConditionalSelector.vyg",
+      "language_path": "export/conformance/invalid-semantic/EffectfulConditionalSelector.vyg",
+      "sha256": "8f22e71ef48992a0e2e3c8185c9308991967cb016fead65020ccab2c368ac57d",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/EffectfulConditionalSelector.vyg"
+    },
+    "conformance/invalid-semantic/GoalDeclarationMismatch.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/GoalDeclarationMismatch.vyg",
+      "language_path": "export/conformance/invalid-semantic/GoalDeclarationMismatch.vyg",
+      "sha256": "176f64bb92a6ca6cb149b61c662c0acb0c5116be7fe84eed5966fc15e4a9dac3",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/GoalDeclarationMismatch.vyg"
+    },
+    "conformance/invalid-semantic/GoalNotFound.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/GoalNotFound.vyg",
+      "language_path": "export/conformance/invalid-semantic/GoalNotFound.vyg",
+      "sha256": "8a2dec654b6b5af5cd4a7f8f6ec0521a7996d0584e169a74958d18eb7a5d65b6",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/GoalNotFound.vyg"
+    },
+    "conformance/invalid-semantic/InvalidRoot.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/InvalidRoot.vyg",
+      "language_path": "export/conformance/invalid-semantic/InvalidRoot.vyg",
+      "sha256": "3335ff4ec49478e14cb60fe09352c24248cd72ccea33140db3fac48bbaeac9ab",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/InvalidRoot.vyg"
+    },
+    "conformance/invalid-semantic/InvalidRootDuplicate.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/InvalidRootDuplicate.vyg",
+      "language_path": "export/conformance/invalid-semantic/InvalidRootDuplicate.vyg",
+      "sha256": "3401eb7c7caa702af8dcc8a31f15024a8a6ea088d8762d68580e63b874d443b6",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/InvalidRootDuplicate.vyg"
+    },
+    "conformance/invalid-semantic/InvalidRootLegacyForm.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/InvalidRootLegacyForm.vyg",
+      "language_path": "export/conformance/invalid-semantic/InvalidRootLegacyForm.vyg",
+      "sha256": "86318349f2c852c549b3354f020f530e87df56076148e9ed523e8b54a9d9bb01",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/InvalidRootLegacyForm.vyg"
+    },
+    "conformance/invalid-semantic/InvalidRootMissing.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/InvalidRootMissing.vyg",
+      "language_path": "export/conformance/invalid-semantic/InvalidRootMissing.vyg",
+      "sha256": "a8fc01cbf946de76d104c3e7ce0b42ab9af506ad7881e657c0b25af6395e78ac",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/InvalidRootMissing.vyg"
+    },
+    "conformance/invalid-semantic/InvalidStructuralContext.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/InvalidStructuralContext.vyg",
+      "language_path": "export/conformance/invalid-semantic/InvalidStructuralContext.vyg",
+      "sha256": "f17b25cab8f1aa2b7b5f28a34c4e1a399fa75af6effd1c0b449d5556350d356b",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/InvalidStructuralContext.vyg"
+    },
+    "conformance/invalid-semantic/InvalidUnicodeEscape.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/InvalidUnicodeEscape.vyg",
+      "language_path": "export/conformance/invalid-semantic/InvalidUnicodeEscape.vyg",
+      "sha256": "0993727b01b6fac2a5aaaf069cf76de156c052245aef6938bb2c37a021a0077d",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/InvalidUnicodeEscape.vyg"
+    },
+    "conformance/invalid-semantic/NestedAnchorCall.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/NestedAnchorCall.vyg",
+      "language_path": "export/conformance/invalid-semantic/NestedAnchorCall.vyg",
+      "sha256": "ad52d280d8379d91faa159fbe467955c60a2e9fecbe954a3189c102dfd814df2",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/NestedAnchorCall.vyg"
+    },
+    "conformance/invalid-semantic/NestedGoalCall.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/NestedGoalCall.vyg",
+      "language_path": "export/conformance/invalid-semantic/NestedGoalCall.vyg",
+      "sha256": "e4ea8440b0c4aca94696d8e64905cd47436e1ac5e99065da1d65275083fb698d",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/NestedGoalCall.vyg"
+    },
+    "conformance/invalid-semantic/NotCallable.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/NotCallable.vyg",
+      "language_path": "export/conformance/invalid-semantic/NotCallable.vyg",
+      "sha256": "4d704668515655e9b3f5f643da0865e38d0fc34f53e7e23f2e638440959498c8",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/NotCallable.vyg"
+    },
+    "conformance/invalid-semantic/OpaqueHostOutput.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/OpaqueHostOutput.vyg",
+      "language_path": "export/conformance/invalid-semantic/OpaqueHostOutput.vyg",
+      "sha256": "7cfad4b6763a75363c21fa24b13c4d267748f56512536fe93f0d91fdd5687a45",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/OpaqueHostOutput.vyg"
+    },
+    "conformance/invalid-semantic/RecursiveSignatureCycle.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/RecursiveSignatureCycle.vyg",
+      "language_path": "export/conformance/invalid-semantic/RecursiveSignatureCycle.vyg",
+      "sha256": "7cdaf81a6db30aaad1ff56830e73288ba2135c5ba42ba05ed315e935b125cc0d",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/RecursiveSignatureCycle.vyg"
+    },
+    "conformance/invalid-semantic/ResolvingMapBranchMany.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/ResolvingMapBranchMany.vyg",
+      "language_path": "export/conformance/invalid-semantic/ResolvingMapBranchMany.vyg",
+      "sha256": "21b90be0fa194359962f8465e4c72148957592612623f5a593e17c73d45b45cc",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/ResolvingMapBranchMany.vyg"
+    },
+    "conformance/invalid-semantic/ResolvingMapBranchZero.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/ResolvingMapBranchZero.vyg",
+      "language_path": "export/conformance/invalid-semantic/ResolvingMapBranchZero.vyg",
+      "sha256": "b90ef06e2c6737b102146f7cb441d1bd9713b1b2371a47775d60ea1bae8c94d6",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/ResolvingMapBranchZero.vyg"
+    },
+    "conformance/invalid-semantic/StructureMapArrowEntry.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/StructureMapArrowEntry.vyg",
+      "language_path": "export/conformance/invalid-semantic/StructureMapArrowEntry.vyg",
+      "sha256": "4fc5324fd73681855ab06973d68e642bce905f18c7c805a8534a773dfb6b7532",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/StructureMapArrowEntry.vyg"
+    },
+    "conformance/invalid-semantic/StructureMapAsValue.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/StructureMapAsValue.vyg",
+      "language_path": "export/conformance/invalid-semantic/StructureMapAsValue.vyg",
+      "sha256": "93e6a5818dffb0136f421dfb340740c17c248faf9b8dfa128700add98a7560d0",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/StructureMapAsValue.vyg"
+    },
+    "conformance/invalid-semantic/StructureMapBareEntry.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/StructureMapBareEntry.vyg",
+      "language_path": "export/conformance/invalid-semantic/StructureMapBareEntry.vyg",
+      "sha256": "b3d09055bf1726474975f4109904c672ffae0ce3855b9e001fc1c49bc3e6e885",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/StructureMapBareEntry.vyg"
+    },
+    "conformance/invalid-semantic/UnknownConditionalBranch.vyg": {
+      "path": "upstream/export/conformance/invalid-semantic/UnknownConditionalBranch.vyg",
+      "language_path": "export/conformance/invalid-semantic/UnknownConditionalBranch.vyg",
+      "sha256": "0bad2297407bf94d7f8d5296c804e2ea7e75cdb1c455e79b4b433ea587a838d1",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-semantic/UnknownConditionalBranch.vyg"
+    },
+    "conformance/invalid-syntax/bare-goal-body.vyg": {
+      "path": "upstream/export/conformance/invalid-syntax/bare-goal-body.vyg",
+      "language_path": "export/conformance/invalid-syntax/bare-goal-body.vyg",
+      "sha256": "d41942676b3f623fbb06e1c408f90a4fc3a227851ff9a835b53a10353aa06984",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-syntax/bare-goal-body.vyg"
+    },
+    "conformance/invalid-syntax/empty-program.vyg": {
+      "path": "upstream/export/conformance/invalid-syntax/empty-program.vyg",
+      "language_path": "export/conformance/invalid-syntax/empty-program.vyg",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-syntax/empty-program.vyg"
+    },
+    "conformance/invalid-syntax/inline-function.vyg": {
+      "path": "upstream/export/conformance/invalid-syntax/inline-function.vyg",
+      "language_path": "export/conformance/invalid-syntax/inline-function.vyg",
+      "sha256": "4de0cd7af7e7a32755331bb5c4310557c05b8f0ade61cebb34c9a3fceb759f78",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-syntax/inline-function.vyg"
+    },
+    "conformance/invalid-syntax/inline-multiplicity-arrow.vyg": {
+      "path": "upstream/export/conformance/invalid-syntax/inline-multiplicity-arrow.vyg",
+      "language_path": "export/conformance/invalid-syntax/inline-multiplicity-arrow.vyg",
+      "sha256": "b40a9fac72447c118f5301574b4fb26d87b74f8aec2539395c0c9f3bee585e66",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-syntax/inline-multiplicity-arrow.vyg"
+    },
+    "conformance/invalid-syntax/leaf-multiplicity-arrow.vyg": {
+      "path": "upstream/export/conformance/invalid-syntax/leaf-multiplicity-arrow.vyg",
+      "language_path": "export/conformance/invalid-syntax/leaf-multiplicity-arrow.vyg",
+      "sha256": "0fb3be53993e541819f516dbc2ce92b1930c988beb86e65520f1788d2b560db8",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-syntax/leaf-multiplicity-arrow.vyg"
+    },
+    "conformance/invalid-syntax/multiplicity-arrow-spaced.vyg": {
+      "path": "upstream/export/conformance/invalid-syntax/multiplicity-arrow-spaced.vyg",
+      "language_path": "export/conformance/invalid-syntax/multiplicity-arrow-spaced.vyg",
+      "sha256": "0cde1fb7967d9c9e8e4d9727511e1928ee98d0e9280c98b471d551a660f81648",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-syntax/multiplicity-arrow-spaced.vyg"
+    },
+    "conformance/invalid-syntax/multiplicity-arrow-two.vyg": {
+      "path": "upstream/export/conformance/invalid-syntax/multiplicity-arrow-two.vyg",
+      "language_path": "export/conformance/invalid-syntax/multiplicity-arrow-two.vyg",
+      "sha256": "7a87695f7d9ab7e288849da135d0f13ac1ab11175e63f68f7b6b4ba52dbb94ff",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-syntax/multiplicity-arrow-two.vyg"
+    },
+    "conformance/invalid-syntax/root-fractional-arity.vyg": {
+      "path": "upstream/export/conformance/invalid-syntax/root-fractional-arity.vyg",
+      "language_path": "export/conformance/invalid-syntax/root-fractional-arity.vyg",
+      "sha256": "3fa65501c8badc113b6a737e97514343b045de47a5564f1ec44b2d238ada3615",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-syntax/root-fractional-arity.vyg"
+    },
+    "conformance/invalid-syntax/root-with-arguments.vyg": {
+      "path": "upstream/export/conformance/invalid-syntax/root-with-arguments.vyg",
+      "language_path": "export/conformance/invalid-syntax/root-with-arguments.vyg",
+      "sha256": "b9210543a3406a723af6e025f8d807a2e3a6c88274df37965dc8a7718821d2b0",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-syntax/root-with-arguments.vyg"
+    },
+    "conformance/invalid-syntax/root-wrong-keyword.vyg": {
+      "path": "upstream/export/conformance/invalid-syntax/root-wrong-keyword.vyg",
+      "language_path": "export/conformance/invalid-syntax/root-wrong-keyword.vyg",
+      "sha256": "0ccd5a876f43faad8ad009be20843e20f1471fd93a26cdcbfbf8df723d6aca66",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-syntax/root-wrong-keyword.vyg"
+    },
+    "conformance/invalid-syntax/unicode-identifier.vyg": {
+      "path": "upstream/export/conformance/invalid-syntax/unicode-identifier.vyg",
+      "language_path": "export/conformance/invalid-syntax/unicode-identifier.vyg",
+      "sha256": "ac1353955ef1bd0f0b911612fbd96a1bd7d46cba40039b043ef76b5822c6f45f",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/invalid-syntax/unicode-identifier.vyg"
+    },
+    "conformance/valid/conditional-recursion.vyg": {
+      "path": "upstream/export/conformance/valid/conditional-recursion.vyg",
+      "language_path": "export/conformance/valid/conditional-recursion.vyg",
+      "sha256": "9a62e4d67376e11b35c4aa2fc974b18d1f740f0c0e4c31100c0cc4f34dbe7e0a",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/valid/conditional-recursion.vyg"
+    },
+    "conformance/valid/continuations.vyg": {
+      "path": "upstream/export/conformance/valid/continuations.vyg",
+      "language_path": "export/conformance/valid/continuations.vyg",
+      "sha256": "132dafe2516e4c752691749349680e24a3cdf2c64cfc963aaecdd1fcef1f5dae",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/valid/continuations.vyg"
+    },
+    "conformance/valid/core.vyg": {
+      "path": "upstream/export/conformance/valid/core.vyg",
+      "language_path": "export/conformance/valid/core.vyg",
+      "sha256": "26ebc0ab488bf393ef8da8c39a52ad96bf79c541c77acc2959dd449ff0a62936",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/valid/core.vyg"
+    },
+    "conformance/valid/output-multiplicity.vyg": {
+      "path": "upstream/export/conformance/valid/output-multiplicity.vyg",
+      "language_path": "export/conformance/valid/output-multiplicity.vyg",
+      "sha256": "977e66d383a080834e5215509d228b995631968afd76b434ca163e544a76862e",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/valid/output-multiplicity.vyg"
+    },
+    "conformance/valid/primes-up-to-by-trial-division.vyg": {
+      "path": "upstream/export/conformance/valid/primes-up-to-by-trial-division.vyg",
+      "language_path": "export/conformance/valid/primes-up-to-by-trial-division.vyg",
+      "sha256": "35769e77fb9315c904a019614df7b53e4897b53ba2069c01c992a5a958e6dda9",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/valid/primes-up-to-by-trial-division.vyg"
+    },
+    "conformance/valid/root-contextual-keyword.vyg": {
+      "path": "upstream/export/conformance/valid/root-contextual-keyword.vyg",
+      "language_path": "export/conformance/valid/root-contextual-keyword.vyg",
+      "sha256": "feeec2a35184649e6ab128eb0957a3d7d2a2a33b17c5f40e729cb6f5136654a8",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/valid/root-contextual-keyword.vyg"
+    },
+    "conformance/valid/structure-valued-lookup-map.vyg": {
+      "path": "upstream/export/conformance/valid/structure-valued-lookup-map.vyg",
+      "language_path": "export/conformance/valid/structure-valued-lookup-map.vyg",
+      "sha256": "cfe504064fa51bdafb32f801f0b4bf60bab75193537dcf4908cbef90729b57bf",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/valid/structure-valued-lookup-map.vyg"
+    },
+    "conformance/valid/unicode-strings.vyg": {
+      "path": "upstream/export/conformance/valid/unicode-strings.vyg",
+      "language_path": "export/conformance/valid/unicode-strings.vyg",
+      "sha256": "97cb8ad4ed553cc39c2b08a6a9f1d7adcfd037bb59036e9ce6a773274456f340",
+      "public_url": "https://4gentsinc.github.io/subsea_cable_webpages/conformance/valid/unicode-strings.vyg"
+    }
+  },
+  "distribution_repository": "https://github.com/on-the-ground/__c_lang_pack"
+}
