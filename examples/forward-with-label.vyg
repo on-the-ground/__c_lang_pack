@@ -1,0 +1,9 @@
+root FetchAndLabel/2
+
+FetchAndLabel = [item, label] -1> [
+    Fetch[item],
+    [value] -> Label[value, label],
+]
+
+Fetch = [item] -1> $fetch(item)
+Label = (value, label) -> {value: value, label: label}

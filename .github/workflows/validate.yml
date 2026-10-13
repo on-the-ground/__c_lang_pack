@@ -1,0 +1,42 @@
+name: Validate independent language pack
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - name: Build and verify package
+        run: |
+          python scripts/package.py build --output "$RUNNER_TEMP/agent-pack"
+          python scripts/package.py validate --output "$RUNNER_TEMP/agent-pack"
+          python scripts/test_package.py
+      - name: Attach reviewable distribution
+        uses: actions/upload-artifact@v4
+        with:
+          name: subsea-cable-lang-pack-0.1.0
+          path: ${{ runner.temp }}/agent-pack/
+          if-no-files-found: error
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Verify syntax and few-shot answers
+        shell: bash
+        run: |
+          base="https://repo1.maven.org/maven2/org/antlr/antlr4/4.13.2"
+          jar="$RUNNER_TEMP/antlr-4.13.2-complete.jar"
+          curl -fsSL -o "$jar" "$base/antlr4-4.13.2-complete.jar"
+          expected="$(curl -fsSL "$base/antlr4-4.13.2-complete.jar.sha1")"
+          echo "${expected%% *}  $jar" | sha1sum --check -
+          python -m pip install antlr4-python3-runtime==4.13.2
+          python scripts/check_examples.py --antlr-jar "$jar"
+          python scripts/test_syntax_cli.py --antlr-jar "$jar"

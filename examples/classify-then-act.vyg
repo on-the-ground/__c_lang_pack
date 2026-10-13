@@ -1,0 +1,16 @@
+root ResolveIncident/1
+
+ResolveIncident = [logs] -1> [
+    Classify[logs],
+    [{cause, evidence}] -> [
+        cause,
+        {
+            flaky: Retry[logs, evidence],
+            real: Patch[logs, evidence],
+        },
+    ],
+]
+
+Classify = [logs] -1> $classify(logs)
+Retry = [logs, evidence] -1> $retry(logs, evidence)
+Patch = [logs, evidence] -1> $patch(logs, evidence)
